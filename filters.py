@@ -13,12 +13,5 @@ class FilterGreetings(MessageFilter):
             return "["+user.first_name+"](tg://user?id="+str(user.id)+")"
         else:
             return ""
-        
-
-
-
-
-
-
 
 filter_greetings = FilterGreetings()
