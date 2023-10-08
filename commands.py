@@ -1,12 +1,20 @@
 from telegram import Update
 from telegram.ext import ContextTypes
 import requests
+from filters import filter_greetings
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm kantana, please talk to me!")
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=update.message.text)
+    message = update.message
+    await context.bot.send_message(chat_id=update.effective_chat.id, 
+                                   text=filter_greetings.detect(message.text)+' '+
+filter_greetings.name_presence(message.text,         
+                            message.chat.id, 
+                            message.from_user.id,  
+                            message.from_user.first_name), 
+                            parse_mode="Markdown")
 
 async def duck(update: Update, context: ContextTypes.DEFAULT_TYPE):
     req = requests.get('https://random-d.uk/api/v2/randomimg')
