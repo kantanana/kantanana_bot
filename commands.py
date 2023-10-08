@@ -10,10 +10,8 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message = update.message
     await context.bot.send_message(chat_id=update.effective_chat.id, 
                                    text=filter_greetings.detect(message.text)+' '+
-filter_greetings.name_presence(message.text,         
-                            message.chat.id, 
-                            message.from_user.id,  
-                            message.from_user.first_name), 
+filter_greetings.name_presence(message.text,
+                            message.from_user), 
                             parse_mode="Markdown")
 
 async def duck(update: Update, context: ContextTypes.DEFAULT_TYPE):
