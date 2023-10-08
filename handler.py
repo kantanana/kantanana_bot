@@ -1,4 +1,4 @@
-from commands import start, echo, duck
+from commands import start, echo, duck, caps
 from filters import filter_greetings
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 
@@ -10,5 +10,6 @@ def echo_handler():
 
 def duck_handler():
     return CommandHandler('duck', duck)
-# def chatgpt_handler():
-#     return MessageHandler((~filters.COMMAND), chatgpt)
+
+def caps_handler():
+    return CommandHandler('caps', caps)

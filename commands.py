@@ -16,5 +16,8 @@ async def duck(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.sendPhoto(chat_id=update.effective_chat.id, photo=open('duck.png', 'rb'))
     # await context.bot.send_message(chat_id=update.effective_chat.id, text='https://random-d.uk/api/v2/randomimg')
 
+async def caps(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text_caps = ' '.join(context.args).upper()
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=text_caps)
     
 
