@@ -1,12 +1,13 @@
 from bot import application
 from log import logger
-from handler import start_handler, echo_handler, duck_handler, caps_handler
+import handler
 
 
 if __name__ == '__main__':
-    application.add_handler(start_handler())
-    application.add_handler(echo_handler())
-    application.add_handler(duck_handler())
-    application.add_handler(caps_handler())
+    application.add_handler(handler.start_handler())
+    application.add_handler(handler.echo_handler())
+    application.add_handler(handler.duck_handler())
+    application.add_handler(handler.caps_handler())
+    application.add_handler(handler.unknown_handler())
     
     application.run_polling()

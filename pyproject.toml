@@ -9,6 +9,11 @@ python = ">=3.10.0,<3.11"
 gpt = "^0.2"
 telegram = "^0.0.1"
 requests = "^2.31.0"
+botlib = "^0.0.0"
+filters = "^1.3.2"
+handler = "^1.3.0"
+metabasepy = "^1.12.0"
+minilog = "^2.2"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md
